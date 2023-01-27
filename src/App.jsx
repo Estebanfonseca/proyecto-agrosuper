@@ -1,10 +1,10 @@
 import './App.css'
-import Login from './pages/Login'
+import LayoutLogin from './pages/layouts/layoutLogin/LayoutLogin'
 
 function App() {
   return (
     <div>
-      <Login/>
+      <LayoutLogin/>
     </div>
   )
 }
