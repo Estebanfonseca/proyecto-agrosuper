@@ -17,10 +17,26 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-.footer{
+.header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 5px solid var(--naranja);
+    box-shadow: 0 0 10px 5px var(--azul);
+    border-radius: 0 0 1rem 1rem;
+}
+.header h1 {
+    font-size: 5rem;
+}
+.header button {
+    width: 5rem;
+}
+.footer {
     width: 100%;
     height: 15vh;
-    background-image: url('./assets/wave.png');
+    background-image: url("./assets/wave.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -53,26 +69,26 @@ form label {
     color: var(--naranja);
     display: flex;
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
     width: 80%;
     font-size: 20px;
 }
-label input{
-    padding:15px 20px;
+label input {
+    padding: 15px 20px;
     width: 100%;
     border-radius: 1rem;
-    border:none;
+    border: none;
     background-color: #8282821a;
 }
-label input:hover{
-    background-color:#fff;
-    border:1px solid #f3f3f4;
+label input:hover {
+    background-color: #fff;
+    border: 1px solid #f3f3f4;
     box-shadow: 0 0 5px var(--azul);
     transform: scaleY(1);
 }
 
-.btn-log{
-    padding:.8rem;
+.btn-log {
+    padding: 0.8rem;
     width: 30%;
     border-radius: 1rem;
     background-color: var(--naranja);
@@ -81,10 +97,44 @@ label input:hover{
     border: none;
     cursor: pointer;
 }
-.btn-log:hover{
+.btn-log:hover,
+.navbar button:hover {
     transform: scaleY(1.1);
     background-color: var(--azul);
     color: var(--naranja);
-    transition:background-color 0.9s,transform .3s;
+    transition: background-color 0.9s, transform 0.3s;
     box-shadow: 0 0 10px var(--naranja);
 }
+.logo {
+    width: 300px;
+}
+.navbar {
+    width: 16rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 11px;
+    background: #ffffff;
+    box-shadow: 9px 9px 18px #666666, -9px -9px 18px #ffffff;
+    z-index: 10;
+}
+.container-main {
+    width: 100%;
+    height: 65vh;
+    padding: 2rem;
+    display: flex;
+}
+.navbar button {
+    padding: 1rem;
+    width: 60%;
+    border-radius: 1rem;
+    background-color: var(--naranja);
+    color: var(--azul);
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
