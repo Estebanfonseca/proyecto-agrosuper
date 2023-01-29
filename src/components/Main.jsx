@@ -4,25 +4,35 @@ import variableActions from "../redux/actions/variableAction";
 import { useEffect } from "react";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import { Line } from "react-chartjs-2";
-import faker from "faker";
+
 
 export default function Main() {
     let dispatch = useDispatch();
     let { getGraphic } = variableActions;
     let { proyectado, real } = useSelector((store) => store.variableReducer);
 
+    useEffect(() => {
+        dispatch(getGraphic());
+    }, []);
+
+    let ingresoReal = [...real.filter((item) => item.concepto === "INGRESO")];
+    ingresoReal = ingresoReal.filter((item) => item.anio === 2022);
+    console.log(ingresoReal);
+    let ingresoProyect = [...proyectado.filter((item) => item.concepto === "INGRESO")];
+    console.log(ingresoProyect);
+
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
     const options = {
         responsive: true,
         interaction: {
             mode: "index",
-            intersect: false,
+            intersect: true,
         },
-        stacked: false,
+        stacked: true,
         plugins: {
             title: {
                 display: true,
-                text: "Chart.js Line Chart - Multi Axis",
+                text: "INGRESO",
             },
         },
         scales: {
@@ -30,42 +40,38 @@ export default function Main() {
                 type: "linear",
                 display: true,
                 position: "left",
+                min: 0,
             },
             y1: {
                 type: "linear",
                 display: false,
                 position: "right",
-                grid: {
-                    drawOnChartArea: false,
-                },
+                min: 0,
             },
+            
         },
     };
 
-    const labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    let labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
     const data = {
         labels,
         datasets: [
             {
                 label: "Real",
-                data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+                data: ingresoReal.map((item) => item.resultado_USDM),
                 borderColor: "#003087",
                 backgroundColor: "#003087",
                 yAxisID: "y",
             },
             {
                 label: "Proyectado",
-                data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+                data: ingresoReal.map((item) => item.resultado_USDM).concat(ingresoProyect.map((item) => item.resultado_USDM)),
                 borderColor: "#e87722",
                 backgroundColor: "#e87722",
-                yAxisID: "y1",
             },
         ],
     };
-
-    useEffect(() => {
-        dispatch(getGraphic());
-    }, []);
 
     return (
         <div className="graficos">
