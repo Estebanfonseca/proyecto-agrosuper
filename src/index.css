@@ -74,10 +74,10 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-form h1 {
+.login h1 {
     color: var(--azul);
 }
-form label {
+.login label {
     color: var(--naranja);
     display: flex;
     flex-direction: column;
@@ -85,14 +85,14 @@ form label {
     width: 80%;
     font-size: 20px;
 }
-label input {
+.login label input {
     padding: 15px 20px;
     width: 100%;
     border-radius: 1rem;
     border: none;
     background-color: #8282821a;
 }
-label input:hover {
+.login label input:hover {
     background-color: #fff;
     border: 1px solid #f3f3f4;
     box-shadow: 0 0 5px var(--azul);
