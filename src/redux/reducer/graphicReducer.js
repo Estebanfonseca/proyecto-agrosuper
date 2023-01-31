@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import variableActions from "../actions/variableAction";
+import variableActions from "../actions/graphicAction";
 
 
 const initialState = {

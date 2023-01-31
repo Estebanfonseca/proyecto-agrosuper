@@ -28,7 +28,7 @@ export default function Graphic({texto,datos1,datos2,usd}) {
                 display: true,
                 position: "left",
                 min: 0,
-                max:4000
+                max:5000
             },
         },
     };
@@ -60,6 +60,7 @@ export default function Graphic({texto,datos1,datos2,usd}) {
     return (
         <div>
             <Line options={options} data={data} />
+            <h4>meses</h4>
         </div>
     );
 }

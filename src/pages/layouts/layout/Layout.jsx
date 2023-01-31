@@ -2,15 +2,22 @@ import React from "react";
 import Header from "./Header";
 import Navbar from "../../../components/Navbar";
 import FooterLogin from "../layoutLogin/FooterLogin";
-import Main from "../../../components/Main";
+import MainGraphic from "../../../components/MainGraphic";
+import MainTable from "../../../components/MainTable";
+import { useState } from "react";
 
 export default function Layout() {
+    let [clic,setClic] = useState(false)
     return (
         <div>
-            <Header />
+            <Header clic={clic}/>
+            <div className="botones">
+                <button className={!clic? 'active' : ''} onClick={()=>setClic(!clic)}>General</button>
+                <button className={clic? 'active' : ''} onClick={()=>setClic(!clic)}>Variaciones</button>
+            </div>
             <div className="container-main">
                 <Navbar />
-                <Main/>
+                {!clic?<MainGraphic />:<MainTable/>}
             </div>
             <FooterLogin />
         </div>
