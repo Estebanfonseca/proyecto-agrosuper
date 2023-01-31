@@ -9,14 +9,15 @@
     box-sizing: border-box;
     font-family: "Gotham", sans-serif;
 }
-body::-webkit-scrollbar {
-    width: 5px;
+body::-webkit-scrollbar,textarea::-webkit-scrollbar {
+    width: 8px;
 }
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,textarea::-webkit-scrollbar-track {
     background: var(--naranja);
 }
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     background-color: var(--azul);
+    border-radius: 5px;
 }
 .header-log {
     width: 100%;
@@ -37,7 +38,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 0 0 1rem 1rem;
 }
 .header h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     width: 55%;
 }
 .header button {
@@ -223,4 +224,56 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 0 5px 3px var(--naranja);
     margin-top: 20px;
     cursor: pointer;
+}
+.table{
+    width: 100%;
+    min-height: 60vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3rem;
+}
+.table h2{
+    color: var(--azul);
+}
+.table-variable{
+    width: 90%;
+    height: 50vh;
+    border-radius: 1rem;
+    text-align: center;
+    margin-left: 2rem;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+.table-variable th{
+    width: 5rem;
+    height: 2rem;
+    font-weight: 800;
+    font-size: 20px;
+    border: 3px solid var(--azul);
+    border-radius: .5rem;
+    
+
+}
+.table-variable td{
+    border: 3px solid var(--naranja);
+    border-radius: 5px;
+    color: var(--azul);
+    font-weight: 500;
+}
+.table-variable td:hover{
+    background-color: var(--naranja);
+    border: 3px solid var(--azul);
+}
+.table-variable tr:hover {
+    background-color: #82828257;
+}
+
+textarea{
+    border-radius: 5px;
+    border: 3px solid var(--naranja);
+    background: #ffffff;
+    box-shadow: 9px 9px 18px #666666, -9px -9px 18px #ffffff;
+    font-size: 20px;
 }

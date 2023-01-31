@@ -2,19 +2,26 @@ import React from "react";
 import tableActions from "../redux/actions/tableActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import textoActions from "../redux/actions/textareaAction";
 
 export default function MainTable() {
     let dispatch = useDispatch();
     let { table } = useSelector((store) => store.tableReducer);
+    let {text} = useSelector(store => store.textoReducer)
     let { getTable } = tableActions;
+    let {textoArea} = textoActions
 
     useEffect(() => {
         dispatch(getTable());
     }, []);
-console.log(table)
+
+    let textNew = (e)=>{
+        dispatch(textoArea(e.target.value))
+    }
+console.log(text)
     return (
-        <div>
-            <table>
+        <div className="table">
+            <table className="table-variable">
                 <thead>
                     <tr>
                         <th>sector</th>
@@ -46,6 +53,8 @@ console.log(table)
                     ):<tr></tr>}
                 </tbody>
             </table>
+            <h2>Explicación</h2>
+            <textarea cols="50" rows="10" value={text} onChange={textNew}></textarea>
         </div>
     );
 }
