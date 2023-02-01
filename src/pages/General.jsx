@@ -3,7 +3,7 @@ import MainGraphic from '../components/MainGraphic'
 import MainTable from "../components/MainTable";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import Header from '../pages/layouts/layout/Header';
+import Header from './layouts/layout/Header';
 
 export default function General() {
     let [clic,setClic] = useState(false)

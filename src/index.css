@@ -171,7 +171,7 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     background-color: #8282821a;
 }
 
-.navbar button {
+.navbar .link,.navbar button {
     padding: 1rem;
     width: 60%;
     border-radius: 1rem;
@@ -181,6 +181,8 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     font-weight: 500;
     border: none;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 .graficos {
     display: flex;
@@ -213,6 +215,13 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     margin-top: 20px;
     cursor: pointer;
 }
+.navbar .active-link{
+    background-color: var(--azul);
+    color: var(--naranja);
+    text-decoration: none;
+}
+
+
 .botones .active {
     background-color: var(--azul);
     border: none;
@@ -276,4 +285,22 @@ textarea{
     background: #ffffff;
     box-shadow: 9px 9px 18px #666666, -9px -9px 18px #ffffff;
     font-size: 20px;
+}
+.verde{
+    background-color: green;
+    width: 15px;
+    color: green;
+    border-radius: 15px;
+}
+.rojo{
+    background-color: red;
+    width: 15px;
+    color: red;
+    border-radius: 15px;
+}
+.amarillo{
+    background-color: yellow;
+    width: 15px;
+    color: yellow;
+    border-radius: 15px;
 }

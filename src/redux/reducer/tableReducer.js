@@ -2,11 +2,15 @@ import { createReducer } from "@reduxjs/toolkit";
 import tableActions from "../actions/tableActions";
 
 const initialState = {
-    table:[]
+    table:[],
+    editor:[]
 }
 
 const tableReducer = createReducer(initialState,(table)=>{
     table.addCase(tableActions.getTable.fulfilled,(state,action)=>{
+        return {...state,...action.payload}
+    })
+    table.addCase(tableActions.getEditor.fulfilled,(state,action)=>{
         return {...state,...action.payload}
     })
 })

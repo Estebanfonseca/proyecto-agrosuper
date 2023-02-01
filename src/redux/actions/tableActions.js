@@ -15,9 +15,24 @@ const getTable = createAsyncThunk('getTable',async()=>{
         return error
     }
 })
+const getEditor = createAsyncThunk('getEditor',async()=>{
+    try{
+        let datos = {
+            "auth": {
+            "username": "devsafio",
+            "token":"tokentokentokenABC"
+            }
+            }
+            let res = await axios.post('http://f11.cl:8090/editorSemanal',datos)
+            return{editor:res.data.data}
+    }catch(error){
+        return error
+    }
+})
 
 const tableActions = {
-    getTable
+    getTable,
+    getEditor
 }
 
 export default tableActions
