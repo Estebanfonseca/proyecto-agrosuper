@@ -2,10 +2,12 @@ import React from "react";
 import tableActions from "../redux/actions/tableActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect , useState} from "react";
+import variableActions from "../redux/actions/graphicAction";
 
 export default function EditorTable() {
     let dispatch = useDispatch();
     let { getEditor } = tableActions;
+    let {variable} = variableActions;
     let { editor } = useSelector((store) => store.tableReducer);
     let [checkedState, setCheckedState] = useState(
         [false,false,false,false]
@@ -14,6 +16,7 @@ export default function EditorTable() {
 
     useEffect(() => {
         dispatch(getEditor());
+        dispatch(variable())
     }, []);
     
 let allCheck = checkedState.every((item)=> item === true)
