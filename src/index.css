@@ -106,7 +106,7 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 .btn-log:hover,
-.navbar button:hover {
+.navbar button:hover,.navbar .link:hover {
     transform: scaleY(1.1);
     background-color: var(--azul);
     color: var(--naranja);
@@ -133,6 +133,13 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     min-height: 60vh;
     padding: 1rem;
     display: flex;
+}
+.container-editor{
+    width: 100%;
+    min-height: 60vh;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 .main {
     display: flex;
@@ -169,6 +176,7 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     border-radius: .5rem;
     border: none;
     background-color: #8282821a;
+    cursor: pointer;
 }
 
 .navbar .link,.navbar button {
@@ -197,6 +205,18 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     width: 25rem;
     height: 15rem;
     cursor: pointer;
+}
+.variable-grafico{
+    width: 100%;
+    height: 50vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.variable-grafico div{
+    width: 100%;
+    height: 100%;
+    
 }
 .botones {
     display: flex;
@@ -249,11 +269,33 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
 .table-variable{
     width: 90%;
     height: 50vh;
-    border-radius: 1rem;
     text-align: center;
     margin-left: 2rem;
     border-collapse: collapse;
     cursor: pointer;
+}
+.table-editor{
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+}
+.table-editor thead th{
+    width: 4rem;
+    height: 3rem;
+    font-weight: 800;
+    font-size: 20px;
+    border: 3px solid var(--azul);
+}
+
+.table-editor tbody th{
+    border:3px solid var(--azul);
+    font-weight: 500;
+    height: 3rem;
+}
+.table-editor td{
+    border: 3px solid var(--naranja);
+
+
 }
 .table-variable th{
     width: 5rem;
@@ -261,13 +303,10 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     font-weight: 800;
     font-size: 20px;
     border: 3px solid var(--azul);
-    border-radius: .5rem;
-    
 
 }
 .table-variable td{
     border: 3px solid var(--naranja);
-    border-radius: 5px;
     color: var(--azul);
     font-weight: 500;
 }
@@ -275,7 +314,7 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     background-color: var(--naranja);
     border: 3px solid var(--azul);
 }
-.table-variable tr:hover {
+.table-variable tbody tr:hover,.table-editor tbody tr:hover {
     background-color: #82828257;
 }
 
@@ -286,21 +325,30 @@ textarea{
     box-shadow: 9px 9px 18px #666666, -9px -9px 18px #ffffff;
     font-size: 20px;
 }
+.edit-btn,.checkbox{
+    cursor: pointer;
+}
 .verde{
-    background-color: green;
-    width: 15px;
-    color: green;
-    border-radius: 15px;
+    background-color: #32cd32;
+    width: 2rem;
+    height: 2rem;
+    color: #32cd32;
+    border-radius: 1rem;
+    margin: auto;
 }
 .rojo{
     background-color: red;
-    width: 15px;
+    width: 2rem;
+    height: 2rem;
     color: red;
-    border-radius: 15px;
+    border-radius: 1rem;
+    margin: auto;
 }
 .amarillo{
-    background-color: yellow;
-    width: 15px;
-    color: yellow;
-    border-radius: 15px;
+    background-color: orange;
+    width: 2rem;
+    height: 2rem;
+    color: orange;
+    border-radius: 1rem;
+    margin: auto;
 }

@@ -1,20 +1,33 @@
 import React from "react";
 import tableActions from "../redux/actions/tableActions";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect , useState} from "react";
 
 export default function EditorTable() {
     let dispatch = useDispatch();
     let { getEditor } = tableActions;
     let { editor } = useSelector((store) => store.tableReducer);
+    let [checkedState, setCheckedState] = useState(
+        [false,false,false,false]
+    );
+
 
     useEffect(() => {
         dispatch(getEditor());
     }, []);
-    console.log(editor);
+    
+let allCheck = checkedState.every((item)=> item === true)
+
+    let handleOnChange = (position) => {
+        const updatedCheckedState = checkedState.map((item, index) =>
+        index === position ? !item : item
+        );
+        setCheckedState(updatedCheckedState);
+    }
+
     return (
-        <div>
-            <table>
+        <div className="table">
+            <table className="table-editor">
                 <thead>
                     <tr>
                         <th>variable</th>
@@ -34,14 +47,17 @@ export default function EditorTable() {
                                 <td>{item.anterior}</td>
                                 <td>{item.actual}</td>
                                 <td>{item.variacion_porc}</td>
-                                <td><p className={item.status}>1</p></td>
-                                <td><button>Editar</button></td>
-                                <td><input type='checkbox'/></td>
+                                <td><p className={item.status}>!</p></td>
+                                <td><button className="edit-btn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARNJREFUSEvN1mENAjEMBeB3CkACEpAASgAFSACcgAIkYAEpOIC8ZEuW3drrtpK7/SPk9tHXrceAmdYwkwtveB0K+UwV5AkTfQVwD0DFveCIbgP8BqDiXvAVwCWLV8W9YJp3AIcMvwHgjxqtHpjxngFw87hS/AHgKB2yVjjtKbFThvOjiPLLFjg/SDHmFJ+6TdVwCU1jNuM1FWsocbWneQRW2BW19tgdtcCcRE8AG+G0VMWb7qFFTZSzNw7+3G5GtYr/imow3ywr73gtUX8FlPeUk6p7ST0uwW6oFnUOu6IavEuyZL/5bnVd1snliloGiDsYN1xcxdJ1ak1gVGDNdWpFiy2V4OIftA55tN/ietxRnO3RH63uLh+7k92sAAAAAElFTkSuQmCC"/></button></td>
+                                <td><input className="checkbox" type='checkbox' id={index} checked={checkedState[index]} onChange={() => handleOnChange(index)}/></td>
                             </tr>
                         ))
                         : <tr></tr>}
                 </tbody>
             </table>
+            <div className="botones">
+                <button className={allCheck?'active':''} onClick={allCheck?()=> alert('Reporte Generado'):null}>Generar Reporte</button>
+            </div>
         </div>
     );
 }

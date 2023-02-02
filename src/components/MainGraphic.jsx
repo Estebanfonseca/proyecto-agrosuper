@@ -64,17 +64,17 @@ export default function MainGraphic() {
                 <h2>Filtros</h2>
                 <form className="w-100 flex j-evenly mb-3 ">
                     <h3>filtrar por año</h3>
-                    <select className="search-input" ref={anioRef} value={filterAnio.anio} name="Select" onChange={hand}>
+                    <select  ref={anioRef} value={filterAnio.anio} name="Select" onChange={hand}>
                         <option value={2022}>2022</option>
                         <option value={2021}>2021</option>
                         <option value={2020}>2020</option>
                     </select>
                     <h3>filtrar por unidad</h3>
                     <label>
-                        <input type='checkbox' checked={check} onClick={checkUsd} value='resultado_USDM' onChange={()=>setCheck(!check)}/>USDM
+                        <input type='checkbox' className="checkbox" checked={check} onClick={checkUsd} value='resultado_USDM' onChange={()=>setCheck(!check)}/>USDM
                     </label>
                     <label>
-                        <input type='checkbox'  checked={!check} onClick={checkUsd}  value='resultado_USD_TON' onChange={()=>setCheck(!check)} />USD TON
+                        <input type='checkbox' className="checkbox"  checked={!check} onClick={checkUsd}  value='resultado_USD_TON' onChange={()=>setCheck(!check)} />USD TON
                     </label>
                 </form>
             </div>

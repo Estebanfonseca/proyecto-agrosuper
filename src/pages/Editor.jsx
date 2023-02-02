@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "./layouts/layout/Header";
 import { useState } from "react";
 import EditorTable from "../components/EditorTable";
+import Variable from "../components/Variable";
 
 export default function Editor() {
     let [clic,setClic] = useState(false)
@@ -15,7 +16,7 @@ export default function Editor() {
             </div>
             <div className="container-main">
                 <Navbar clase="active-link" />
-                <EditorTable/>
+                {!clic?<EditorTable/>:<Variable/>}
             </div>
         </div>
     );

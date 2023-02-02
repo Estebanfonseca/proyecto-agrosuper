@@ -18,7 +18,7 @@ export default function MainTable() {
     let textNew = (e)=>{
         dispatch(textoArea(e.target.value))
     }
-console.log(text)
+
     return (
         <div className="table">
             <table className="table-variable">
