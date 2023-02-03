@@ -40,6 +40,7 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
 .header h1 {
     font-size: 4.5rem;
     width: 55%;
+    
 }
 .header button {
     width: 5rem;
@@ -256,6 +257,11 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     box-shadow: 9px 9px 18px #666666, -9px -9px 18px #ffffff;
     justify-content: center;
     
+}
+.container-editor img{
+    width: 50%;
+    height: 100%;
+    margin: auto;
 }
 .container-editor button {
     width: 10rem;

@@ -15,7 +15,7 @@ export default function General() {
                 <button className={clic? 'active' : ''} onClick={()=>setClic(!clic)}>Variaciones</button>
             </div>
             <div className="container-main">
-                <Navbar />
+                <Navbar clase={'general'}/>
                 {!clic?<MainGraphic />:<MainTable/>}
             </div>
     </div>

@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 export default function Navbar({clase}) {
   return (
     <div className='navbar'>
-        <button>Cerdo</button>
-        <button>Pollo</button>
-        <button>Pavo</button>
-        <Link  className={clase?'active-link link':'link'} to="/editor">Editor</Link>
+        <Link  className={clase === 'general'?'active-link link':'link'} to="/general">General</Link>
+        <Link  className={clase === 'cerdo'?'active-link link':'link'} to="/cerdo">Cerdo</Link>
+        <Link  className={clase === 'pollo'?'active-link link':'link'} to="/pollo">Pollo</Link>
+        <Link  className={clase === 'pavo'?'active-link link':'link'} to="/pavo">Pavo</Link>
+        <Link  className={clase === 'editor'?'active-link link':'link'} to="/editor">Editor</Link>
     </div>
   )
 }

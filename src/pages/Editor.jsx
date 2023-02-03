@@ -15,7 +15,7 @@ export default function Editor() {
                 <button className={clic ? "active" : ""} onClick={() => setClic(!clic)}>Variable</button>
             </div>
             <div className="container-main">
-                <Navbar clase="active-link" />
+                <Navbar clase={'editor'}  />
                 {!clic?<EditorTable/>:<Variable/>}
             </div>
         </div>
