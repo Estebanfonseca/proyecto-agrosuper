@@ -72,6 +72,55 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     justify-content: space-evenly;
     align-items: center;
 }
+.drop-list{
+    font-size: 1.2em;
+    position: absolute;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: .5rem;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+  .m-1{
+    margin: .5rem;
+  }
+  .me-3{
+    margin-right: 2rem;
+  }
+  .nav-link{
+    text-decoration: none;
+    color: #0a0a0a;
+  }
+  .nav-link:hover{
+    color: var(--azul);
+    cursor: pointer;
+  }
+  .sign-out{
+    font-size: 1em;
+  }
+  .user-icon:hover{
+    border-radius: 50%;
+    transition: all 1s;
+    transform: translatey(-10px);
+    box-shadow: 1px 1px var(--azul);
+    cursor: pointer;
+  }
+  .user-icon{
+    border-radius: 50%;
+    width: 4rem;
+    margin-right: 1rem;
+  }
+  .hidden{
+    display: none;
+  }
+  .list-border{
+    text-align: center;
+    min-width: rem;
+    border: solid var(--naranja);
+    border-radius: 5%;
+    margin-right: .2rem;
+  }
 .login h1 {
     color: var(--azul);
 }
