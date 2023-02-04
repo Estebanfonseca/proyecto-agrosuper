@@ -25,3 +25,5 @@ git commit -m 'deploy'
 
 # si estás desplegando en https://<NOMBRE DE USUARIO>.github.io/<REPO>
 # git push -f git@github.com:Estebanfonseca/proyecto-agrosuper.git main:gh-pages
+
+cd -
