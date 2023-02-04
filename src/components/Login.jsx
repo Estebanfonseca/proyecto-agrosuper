@@ -11,8 +11,6 @@ export default function Login() {
     let [name,setName] = useState('')
     let [pass,setPass] = useState('')
 
-
-    console.log(usuario)
     let iniciarSesion = ()=>{
         if(name === 'devsafio' && pass === 'tokentokentokenABC') {
             dispatch(login())
