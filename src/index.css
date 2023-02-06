@@ -288,6 +288,22 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     margin-top: 20px;
     cursor: pointer;
 }
+.btns{
+    background-color: #fff;
+    border: none;
+    color: var(--naranja);
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px 3px var(--naranja);
+    cursor: pointer;
+    height: 3rem;
+    width: 6rem;
+}
+.btns:hover{
+    background-color: var(--azul);
+}
+
 .navbar .active-link{
     background-color: var(--azul);
     color: var(--naranja);

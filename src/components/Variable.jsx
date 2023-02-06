@@ -60,13 +60,13 @@ export default function Variable() {
                     </tr>
                 </tbody>
             </table>
-            <button onClick={()=>probarNuevoValor()} >Probar valor</button>
+            <button className="btns" onClick={()=>probarNuevoValor()} >Probar valor</button>
                 <form className="form-variable">
                     <h2>Variable 1</h2>
                     <input type="text" value={valor} onChange={(e)=>setValor(e.target.value) } onKeyUp={()=>valorAprobar(valor)} />
                     <input type="range" min={deslizante.min} max={deslizante.max} value={valor} onChange={(e) => {setValor(e.target.value);valorAprobar(valor)}} onMouseOut={()=>valorAprobar(valor)}/>
                 </form>
-            <button>Guardar Valor</button>
+            <button className="btns">Guardar Valor</button>
         </div>
     );
 }

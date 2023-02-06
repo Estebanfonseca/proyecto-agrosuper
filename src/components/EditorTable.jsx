@@ -35,6 +35,10 @@ let allCheck = checkedState.every((item)=> item === true)
         setClic(clicked)
     }
 
+    let editorB = [...editor]
+    editorB = editorB.splice(1)
+    console.log(editorB)
+
 
     return (
         <div className="table">
