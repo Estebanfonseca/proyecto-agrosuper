@@ -7,23 +7,20 @@ import Editor from './pages/Editor'
 import Pavo from './pages/Pavo'
 import Pollo from './pages/Pollo'
 import Cerdo from './pages/Cerdo'
-import { ProtectedRoute } from './components/ProtectedRoute'
-import { useSelector } from 'react-redux'
+import Usuario from './pages/Usuario'
 
 function App() {
-  let {login} = useSelector(store=>store.loginReducer)
   return (
     <div>
       <Layout>
         <Routes>
           <Route path="/" element={<LayoutLogin/>}/>
-          <Route element={<ProtectedRoute isAllowed={!!login} reDirect={'/'}/>}>
-            <Route path="/general" element={<General/>}/>
-            <Route path="/editor" element={<Editor/>}/>
-            <Route path='/pavo' element={<Pavo/>}/>
-            <Route path='/pollo' element={<Pollo/>}/>
-            <Route path='/cerdo' element={<Cerdo/>}/>
-          </Route>
+          <Route path="/general" element={<General/>}/>
+          <Route path="/editor" element={<Editor/>}/>
+          <Route path='/pavo' element={<Pavo/>}/>
+          <Route path='/pollo' element={<Pollo/>}/>
+          <Route path='/cerdo' element={<Cerdo/>}/>
+          <Route path='/mi-perfil' element={<Usuario/>}/>
         </Routes>
       </Layout>
     </div>

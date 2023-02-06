@@ -12,7 +12,7 @@ export default function Login() {
     let [pass,setPass] = useState('')
 
     let iniciarSesion = ()=>{
-        if(name === 'devsafio' && pass === 'tokentokentokenABC') {
+        if(name === 'devsafio' && pass === 'tokenABC') {
             dispatch(login())
             navigate('/general')
         }else{

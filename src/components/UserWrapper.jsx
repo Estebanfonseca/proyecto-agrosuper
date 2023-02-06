@@ -43,7 +43,7 @@ export default function User () {
                 <img className='user-icon' src='https://w7.pngwing.com/pngs/741/68/png-transparent-user-computer-icons-user-miscellaneous-cdr-rectangle-thumbnail.png'  alt="user" />
             </button>
             <ul className={`${showLogin ? '' : 'hidden'} drop-list list-border`}>
-                    <li><Link className='nav-link' to={`/profile`}>Mi perfil</Link></li>
+                    <li><Link className='nav-link' to={`/mi-perfil`}>Mi perfil</Link></li>
                     <li><button onClick={signOutHandler} className='nav-link sign-out'>Logout</button></li>
             </ul>
         </div>
