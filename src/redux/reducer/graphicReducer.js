@@ -16,6 +16,7 @@ const variableReducer = createReducer(initialState,(variable)=>{
     variable.addCase(variableActions.getGraphic.fulfilled,(state,action)=>{
         return {...state,...action.payload}
     })
+
     variable.addCase(variableActions.variable.fulfilled,(state,action)=>{
         return {...state,...action.payload}
     })

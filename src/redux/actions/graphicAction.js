@@ -19,9 +19,13 @@ const getGraphic = createAsyncThunk("getGraphic", async () => {
                 },
             },
         };
-        let res = await axios.post("http://f11.cl:8090/getCarnesRealProyeccion", datos);
-        console.log(res)
-        return { proyectado: res.data.proyectado, real: res.data.real } || {real:[
+        let res = await axios.post("https://f11.cl:8090/getCarnesRealProyeccion", datos);
+        
+            return { proyectado: res.data.proyectado, real: res.data.real }
+       
+         
+    } catch (error) {
+        return {real:[
             {
                 "concepto": "INGRESO",
                 "anio": 2020,
@@ -1032,8 +1036,6 @@ const getGraphic = createAsyncThunk("getGraphic", async () => {
                 "resultado_USD_TON": 1521.0
             }
         ]};
-    } catch (error) {
-        return error;
     }
 });
 const variable = createAsyncThunk("variable1", async () => {
@@ -1045,7 +1047,7 @@ const variable = createAsyncThunk("variable1", async () => {
             },
             var_name: "variableA",
         };
-        let res = await axios.post("http://f11.cl:8090/editorVariables", datos);
+        let res = await axios.post("https://f11.cl:8090/editorVariables", datos);
         console.log(res)
         return {
             variableEjeX: res.data.data.serie_A.x,
@@ -1055,7 +1057,72 @@ const variable = createAsyncThunk("variable1", async () => {
             afectadas: res.data.data.afectadas,
         };
     } catch (error) {
-        return error;
+        
+        return{variableEjeX:[
+            202201,
+            202202,
+            202203,
+            202204,
+            202205,
+            202206,
+            202207,
+            202208,
+            202209,
+            202210,
+            202211,
+            202212,
+            202301,
+            202302,
+            202303,
+            202304,
+            202305,
+            202306
+        ],variableEjeY:[
+            4,
+            2,
+            6,
+            3,
+            6,
+            3,
+            10,
+            3,
+            4,
+            12,
+            3,
+            4,
+            8,
+            6,
+            2,
+            4,
+            5,
+            1
+        ],variableEjeY2:[
+            4,
+            2,
+            6,
+            3,
+            6,
+            3,
+            10,
+            3,
+            4,
+            12,
+            3,
+            4,
+            8,
+            6,
+            2,
+            4,
+            5,
+            1
+        ],deslizante:{
+            "min": 1,
+            "max": 100
+        },afectadas:{
+            "vta_int": 10,
+            "vta_nac": 100,
+            "ingreso": 200
+        }}
     }
 });
 
