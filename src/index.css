@@ -398,10 +398,18 @@ body::-webkit-scrollbar-thumb,textarea::-webkit-scrollbar-thumb {
     font-weight: 500;
     height: 3rem;
 }
+.btn {
+    border: none ;
+    background-color: #ffffff;
+}
 .table-editor td{
     border: 3px solid var(--naranja);
-
-
+}
+.input-table{
+    width: 100%;
+    padding: .5rem;
+    text-align: center;
+    font-size: 16px;
 }
 .table-variable th{
     width: 5rem;

@@ -39,8 +39,8 @@ export default function User () {
 
   return (
          <div className="m-1 me-3" onKeyUp={keyHandler}>
-            <button onClick={loginHandler}>
-                <img className='user-icon' src='https://www.cavsi.com/preguntasrespuestas/images/que-es-usuario.jpg'  alt="user" />
+            <button className='btn' onClick={loginHandler}>
+                <img className='user-icon' src='https://w7.pngwing.com/pngs/741/68/png-transparent-user-computer-icons-user-miscellaneous-cdr-rectangle-thumbnail.png'  alt="user" />
             </button>
             <ul className={`${showLogin ? '' : 'hidden'} drop-list list-border`}>
                     <li><Link className='nav-link' to={`/profile`}>Mi perfil</Link></li>

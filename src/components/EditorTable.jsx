@@ -12,6 +12,7 @@ export default function EditorTable() {
     let [checkedState, setCheckedState] = useState(
         [false,false,false,false]
     );
+    let [clic,setClic] = useState([false,false,false,false])
 
 
     useEffect(() => {
@@ -27,6 +28,13 @@ let allCheck = checkedState.every((item)=> item === true)
         );
         setCheckedState(updatedCheckedState);
     }
+    let handleClic = (position) =>{
+        const clicked = clic.map((item,index)=>
+        index === position ? !item : item
+        );
+        setClic(clicked)
+    }
+
 
     return (
         <div className="table">
@@ -48,10 +56,10 @@ let allCheck = checkedState.every((item)=> item === true)
                             <tr key={index}>
                                 <th>{item.nombre_var}</th>
                                 <td>{item.anterior}</td>
-                                <td>{item.actual}</td>
+                                <td>{clic[index]?<input className="input-table"  defaultValue={item.actual} />:item.actual}</td>
                                 <td>{item.variacion_porc}</td>
                                 <td><p className={item.status}>!</p></td>
-                                <td><button className="edit-btn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARNJREFUSEvN1mENAjEMBeB3CkACEpAASgAFSACcgAIkYAEpOIC8ZEuW3drrtpK7/SPk9tHXrceAmdYwkwtveB0K+UwV5AkTfQVwD0DFveCIbgP8BqDiXvAVwCWLV8W9YJp3AIcMvwHgjxqtHpjxngFw87hS/AHgKB2yVjjtKbFThvOjiPLLFjg/SDHmFJ+6TdVwCU1jNuM1FWsocbWneQRW2BW19tgdtcCcRE8AG+G0VMWb7qFFTZSzNw7+3G5GtYr/imow3ywr73gtUX8FlPeUk6p7ST0uwW6oFnUOu6IavEuyZL/5bnVd1snliloGiDsYN1xcxdJ1ak1gVGDNdWpFiy2V4OIftA55tN/ietxRnO3RH63uLh+7k92sAAAAAElFTkSuQmCC"/></button></td>
+                                <td><button onClick={()=>handleClic(index)} className="edit-btn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAARNJREFUSEvN1mENAjEMBeB3CkACEpAASgAFSACcgAIkYAEpOIC8ZEuW3drrtpK7/SPk9tHXrceAmdYwkwtveB0K+UwV5AkTfQVwD0DFveCIbgP8BqDiXvAVwCWLV8W9YJp3AIcMvwHgjxqtHpjxngFw87hS/AHgKB2yVjjtKbFThvOjiPLLFjg/SDHmFJ+6TdVwCU1jNuM1FWsocbWneQRW2BW19tgdtcCcRE8AG+G0VMWb7qFFTZSzNw7+3G5GtYr/imow3ywr73gtUX8FlPeUk6p7ST0uwW6oFnUOu6IavEuyZL/5bnVd1snliloGiDsYN1xcxdJ1ak1gVGDNdWpFiy2V4OIftA55tN/ietxRnO3RH63uLh+7k92sAAAAAElFTkSuQmCC"/></button></td>
                                 <td><input className="checkbox" type='checkbox' id={index} checked={checkedState[index]} onChange={() => handleOnChange(index)}/></td>
                             </tr>
                         ))
