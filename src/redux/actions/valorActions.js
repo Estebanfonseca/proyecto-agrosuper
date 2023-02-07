@@ -13,7 +13,7 @@ const probarValor = createAsyncThunk('probarValor',async(valor)=>{
             var_name : "variableA",
             value_test:valor
             }
-        let res = await axios.post("http://f11.cl:8090/probarVariable", datos);
+        let res = await axios.post("https://f11.cl:8090/probarVariable", datos);
         return { nuevoValor:res.data.data };
     } catch (error) {
         return error;
